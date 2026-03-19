@@ -1,5 +1,5 @@
 // Nombre de la caché
-const CACHE = "mosaico-cache-v5";
+const CACHE = "flappy-cache-v5";
 //CARGA LOS ARCHIVOS 
 const archivos = [
 "/",
@@ -8,11 +8,13 @@ const archivos = [
 "/carga.js",
 "/inicio.js",
 "/juego.js",
+"/gameover.js",
 
-"/1.jpg",
-"/2.jpeg",
-"/3.jpg",
 "/fondo.jpg",
+"/pato.png",
+"/pipe.png",
+"/suelo.png",
+
 "/icono.png"
 ];
 
