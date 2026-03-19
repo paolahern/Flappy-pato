@@ -8,8 +8,10 @@
 
 <!-- IMPORTANTE PARA CELULARES -->
 <meta name ="viewport" content ="width=device-width, initial-scale=1.0, user-scalable=no">
-
-<title>El pollo que huela</title>
+<!-- Manifest para instalar la app -->
+<link rel="manifest" href="manifest.json">
+  
+<title>El pato voladooor</title>
 
 <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.js"></script>
 <head>
@@ -40,10 +42,20 @@ height:auto;
 
 <body>
 
-<script src ="js/inicio.js"></script>
-<script src ="js/juego.js"></script>
-<script src ="js/gameover.js"></script>
-<script src ="js/main.js"></script>
+<script src ="inicio.js"></script>
+<script src ="juego.js"></script>
+<script src ="gameover.js"></script>
+<script src ="main.js"></script>
+
+<script>
+// Registrar el Service Worker
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./service_worker.js")
+    .then(() => console.log("Service Worker registrado"))
+    .catch(error => console.log("Error al registrar Service Worker:", error));
+}
+</script>
+
 
 </body>
 </html>
