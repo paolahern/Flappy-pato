@@ -5,10 +5,10 @@ super("Inicio");
 }
 
 preload(){
-    this.load.image("fondo","../assets/fondo.png");
-    this.load.image("pato","../assets/pato.png");
-    this.load.image("pipe","../assets/pipe.png");
-    this.load.image("suelo","../assets/suelo.png");
+    this.load.image("fondo","./fondo.png");
+    this.load.image("pato","./pato.png");
+    this.load.image("pipe","./pipe.png");
+    this.load.image("suelo","./suelo.png");
 }
 
 
