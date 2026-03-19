@@ -61,8 +61,8 @@ this.physics.add.existing(this.suelo, true);
     this.physics.add.collider(this.pato, this.suelo, this.gameOver, null, this);
 
     // ---------------- DEBUG HITBOX ----------------
-    this.debugGraphics = this.add.graphics();
-    this.physics.world.createDebugGraphic();
+    //this.debugGraphics = this.add.graphics();
+    //this.physics.world.createDebugGraphic();
 
 }
 
@@ -107,8 +107,8 @@ verificarPuntos(){
             }
         }
     });
-    this.debugGraphics.clear();
-    this.physics.world.drawDebug = true;
+    //this.debugGraphics.clear();
+    //this.physics.world.drawDebug = true;
 }
 
 // ---------------- CREAR TUBOS ----------------
