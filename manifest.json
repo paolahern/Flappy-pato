@@ -3,7 +3,7 @@
 "short_name": "Pato",
 "start_url": "./",
 "display": "standalone",
-"orientation": "landscape",
+"orientation": "portrait",
 
 "background_color": "#000000",
 "theme_color": "#A8E6A3",
