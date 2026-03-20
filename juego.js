@@ -3,9 +3,16 @@ class Juego extends Phaser.Scene {
 constructor(){
     super("Juego");
 }
+    preload(){
+    this.load.audio("musica", "musica.mp3");
+}
 
 create(){
-
+     //Musica 
+    this.musica = this.sound.add("musica", {
+    loop: true,
+    volume: 0.5
+});
     // ---------------- PANTALLA ----------------
     this.ancho = this.scale.width;
     this.alto = this.scale.height;
@@ -52,8 +59,21 @@ this.physics.add.existing(this.suelo, true);
     });
 
     // ---------------- CONTROLES ----------------
-    this.input.on("pointerdown", this.saltar, this);
-    this.input.keyboard.on("keydown-SPACE", this.saltar, this);
+  this.input.on("pointerdown", () => {
+    this.saltar();
+
+    if(!this.musica.isPlaying){
+        this.musica.play();
+    }
+});
+// solo se ejecuta la musica una vez
+this.input.keyboard.on("keydown-SPACE", () => {
+    this.saltar();
+
+    if(!this.musica.isPlaying){
+        this.musica.play();
+    }
+});
 
     // ---------------- GENERADOR DE TUBOS ----------------
     this.time.addEvent({
@@ -138,13 +158,13 @@ crearTubos(){
 
     // Se ajusto la colision del tubo 
     arriba.body.setSize(arriba.displayWidth * 0.7, arriba.displayHeight);
-    arriba.body.setOffset(arriba.width * 0.10, 0);
+    abajo.body.setOffset(abajo.displayWidth * 0.10, 0);
 
     // tubo abajo
     let abajo = this.pipes.create(this.ancho,posicion,"pipe");
 
     abajo.setOrigin(0,0);
-    arriba.setScale(0.5);//Ajustar tamaño de tubos
+    abajo.setScale(0.5);//Ajustar tamaño de tubos
     abajo.body.allowGravity = false;
     abajo.setVelocityX(-200);
 
