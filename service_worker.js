@@ -15,7 +15,8 @@ const archivos = [
 "/pipe.png",
 "/suelo.png",
 
-"/icono.png"
+"/icono.png",
+"/musica.mp3"
 ];
 
 self.addEventListener("install", (event) => {
