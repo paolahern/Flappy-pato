@@ -19,9 +19,16 @@ create(){
     .setScale(0.8); //escala el pajaro por si lo requieres
     this.pato.body.gravity.y = 900;
 
-    // hitbox del pajaro
-    //El true lo centra automáticamente.
-    this.pato.body.setSize(30,30,true);
+    //Se ajusto el hit box del pato 
+    this.pato.body.setSize(
+    this.pato.displayWidth * 0.6,
+    this.pato.displayHeight * 0.6
+);
+
+    this.pato.body.setOffset(
+    this.pato.displayWidth * 0.2,
+    this.pato.displayHeight * 0.2
+);
 
     // ---------------- GRUPO DE TUBOS ----------------
     this.pipes = this.physics.add.group();
@@ -114,13 +121,14 @@ verificarPuntos(){
 // ---------------- CREAR TUBOS ----------------
 crearTubos(){
 
-    let espacio = 200; //Aumenta o disminuye el espacio entre los tubos
+    let espacio = 180; //Se ajusto el tamaño de colision 
     let posicion = Phaser.Math.Between(this.alto * 0.3, this.alto * 0.7);
 
     // tubo arriba
     let arriba = this.pipes.create(this.ancho, posicion-espacio,"pipe");
 
     arriba.setOrigin(0,1);
+    arriba.setScale(0.5);//ajustar tamaño de tubos
     arriba.body.allowGravity = false;
     arriba.setVelocityX(-200);
 
@@ -128,22 +136,23 @@ crearTubos(){
     arriba.setData("pasado",false);
 
 
-    // Ajusta el tamaño de la colision tubo arriba
-    arriba.body.setSize(arriba.width * 0.7, arriba.height);
+    // Se ajusto la colision del tubo 
+    arriba.body.setSize(arriba.displayWidth * 0.7, arriba.displayHeight);
     arriba.body.setOffset(arriba.width * 0.10, 0);
 
     // tubo abajo
     let abajo = this.pipes.create(this.ancho,posicion,"pipe");
 
     abajo.setOrigin(0,0);
+    arriba.setScale(0.5);//Ajustar tamaño de tubos
     abajo.body.allowGravity = false;
     abajo.setVelocityX(-200);
 
     abajo.setData("tipo","abajo");
 
     
-    // Ajusta el tamaño de la colision tubo abajo
-    abajo.body.setSize(abajo.width * 0.7, abajo.height);
+    // Se ajusto la colision del tubo
+    abajo.body.setSize(abajo.displayWidth * 0.7, abajo.displayHeight);
     abajo.body.setOffset(abajo.width * 0.10, 0);
 
     this.pipes.getChildren().forEach(pipe=>{
