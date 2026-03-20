@@ -1,5 +1,5 @@
 // Nombre de la caché
-const CACHE = "flappy-cache-v5";
+const CACHE = "flappy-cache-v6";
 //CARGA LOS ARCHIVOS 
 const archivos = [
 "/",
