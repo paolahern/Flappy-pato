@@ -19,10 +19,20 @@ const config = {
     scene:[Inicio,Juego,GameOver]
 };
 
-const game = new Phaser.Game(config);
 
-if (screen.orientation) { 
-    screen.orientation.lock("portrait").catch(function(error){
-        console.log("No se pudo bloquear orientación");
-    });
-}
+// ---------------- INICIO DEL JUEGO ----------------
+window.onload = async function(){
+
+    //Espera a que cargue la fuente antes de iniciar Phaser
+    await document.fonts.load('16px "Press Start 2P"');
+
+    // crea el juego
+    const game = new Phaser.Game(config);
+
+    // ---------------- BLOQUEAR ORIENTACIÓN ----------------
+    if (screen.orientation) { 
+        screen.orientation.lock("portrait").catch(function(error){
+            console.log("No se pudo bloquear orientación");
+        });
+    }
+};
