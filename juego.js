@@ -33,7 +33,7 @@ create(){
     this.pato.body.gravity.y = 900;
 
     // Se ajusta la colisión del pato
-    // Como tu imagen es 64x64, se pone una hitbox más centrada
+
     this.pato.body.setSize(40,40);
     this.pato.body.setOffset(12,12);
 
@@ -88,7 +88,7 @@ create(){
     this.physics.add.collider(this.pato, this.suelo, this.gameOver, null, this);
 
     // ---------------- DEBUG HITBOX ----------------
-    // Descomenta esto si quieres ver las colisiones
+
     // this.physics.world.createDebugGraphic();
     // this.physics.world.drawDebug = true;
 }
